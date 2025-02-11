@@ -1,0 +1,233 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    
+}
+
+body {
+    background: #1a1a1a;
+    color: white;
+}
+
+/* HERO SECTION */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.hero-content {
+    font-family: "Inconsolata", sans-serif;
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    animation: slideInLeft 1.5s ease-in-out;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    color: #00ffea;
+    min-height: 50px;
+}
+
+.hero-content p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out forwards 1s;
+}
+
+/* HERO IMAGE */
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* PROJETOS */
+.section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Barra de Navegação */
+.top-buttons {
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    align-items: center; /* Alinha logo e botões verticalmente */
+    background-color: #252525;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* Logo dentro da barra */
+.logo {
+    margin-right: 1100px; /* Espaçamento entre a logo e os botões */
+}
+
+.logo-img {
+    width: 80px; /* Ajuste o tamanho da logo */
+    height: auto;
+}
+
+/* Botões */
+.top-buttons button {
+    background-color: #00ffea;
+    color: black; /* Cor inicial do texto */
+    border: 1px solid #00ffea; /* Borda com a cor padrão */
+    padding: 8px 16px; /* Botões menores */
+    margin: 0 10px; /* Espaçamento entre os botões */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; /* Texto menor nos botões */
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adicionado para transição da cor do texto */
+}
+
+/* Alteração ao passar o mouse nos botões */
+.top-buttons button:hover {
+    background-color: #000000; /* Cor de fundo do botão */
+    color: #00ffea; /* Cor do texto ao passar o mouse */
+    border-color: #00ffea; /* A borda mantém a cor original */
+}
+
+
+/* Alinhamento dos botões à direita */
+.top-buttons button:first-child {
+    margin-left: auto; /* Alinha os botões à direita */
+}
+
+
+
+
+/* MENU LATERAL (Removido, agora com botões) */
+#menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    background: #000000;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+#menu-btn:hover {
+    background: #00ffff;
+}
+
+#side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #222;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px;
+    z-index: 1001;
+}
+
+#side-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#side-menu ul li {
+    padding: 15px;
+}
+
+#side-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    display: block;
+}
+
+#side-menu ul li a:hover {
+    color: #00f7ff;
+}
+
+/* Botão de fechar */
+#close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* Overlay escuro ao abrir o menu */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
